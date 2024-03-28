@@ -6,11 +6,11 @@ public:
 
         while(r<nums.size()){
             m[nums[r]]++;
-            mx=max(mx,m[nums[r]]);
+            // mx=max(mx,m[nums[r]]);
 
-            while(mx>k){
+            while(m[nums[r]]>k){
                 max_len=max(max_len, r-l);
-                mx-=(mx== m[nums[l]]);
+                // mx-=(mx== m[nums[l]]);
                 m[nums[l++]]--;
             }    
             r++;
