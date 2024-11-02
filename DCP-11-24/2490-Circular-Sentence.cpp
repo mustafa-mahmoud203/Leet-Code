@@ -3,22 +3,13 @@ public:
     bool isCircularSentence(string s) {
         
         string word="" ,last ="";
-        if(s.back()!=s[0])return false;
-        for(char c:s ){
-            if(c == ' '){
-                if(last.size()>0){
-                    if(last.back()!=word[0])return false;
-                }
-                last=word;
-                word="";
-                continue;
+        
+        for(int i=0;i<s.size();i++){
+            if(s[i]== ' '){
+                if(s[i-1]!=s[i+1])return false;
             }
-            word+=c;
         }
-          if(last.size()>0){
-                    if(last.back()!=word[0])return false;
-                }
-
-    return true;
+       
+    return (s.back()==s[0]);
     }
 };
