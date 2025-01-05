@@ -4,17 +4,11 @@ public:
         int n = s.size();
         vector<int>pref(n+1,0);
         for(auto vec : shifts){
-            int start=vec[0];
-            int end=vec[1];
-            int operation=vec[2];
-            if(operation==0){
-                pref[start]--;
-                if(end+1<n)pref[end+1]++;
-            }
-            else{
-                pref[start]++;
-                if(end+1<n)pref[end+1]--;
-            }
+            int start=vec[0], end=vec[1], direction =vec[2];
+            int value=(direction == 1) ? 1 : -1;
+                pref[start]+=value;
+                pref[end+1]-=value;
+            
         }
 
         for(int i=1;i<n+1;i++){
