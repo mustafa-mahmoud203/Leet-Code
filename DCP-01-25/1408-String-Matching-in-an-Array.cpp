@@ -8,7 +8,7 @@ public:
 
     for(int i=0 ; i < words.size(); i++ ){
         for(int j=i+1; j < words.size();j++){
-            if(words[j].find(words[i])!= string::npos){
+            if(words[j].find(words[i])!= -1){
                 res.emplace_back(words[i]);
                 break;}
         }
