@@ -1,6 +1,8 @@
 class Solution {
 public:
     bool checkStraightLine(vector<vector<int>>& coordinates) {
+        //using  slope equality:
+        //(y1 - y0) / (x1 - x0) == (y - y0) / (x - x0)
         int n=coordinates.size();
         int x0=coordinates[0][0];
         int x1=coordinates[1][0];
